@@ -196,11 +196,10 @@
 	            $("#costdetails").html(costdetails);
 	            i++;
 	            saletaxes+=val.pstax;
-	            totalcosts+=parseFloat(val.itemscost)+saletaxes;
+	            totalcosts+=parseFloat(val.itemscost)+val.pstax;
 	            console.log(val.pcost);
-	            costvalues = '<li class="list-group-item">Sales Taxes = <span> '+(Math.ceil((parseFloat(saletaxes))*20)/20).toFixed(2)+' </span></li><li class="list-group-item">Total Cost = <span> '+(Math.ceil((parseFloat(totalcosts))*20)/20).toFixed(2)+'</span></li>';
 	        });
-			
+			costvalues = '<li class="list-group-item">Sales Taxes = <span> '+(Math.ceil((parseFloat(saletaxes))*20)/20).toFixed(2)+' </span></li><li class="list-group-item">Total Cost = <span> '+(Math.ceil((parseFloat(totalcosts))*20)/20).toFixed(2)+'</span></li>';
 			$('#completedetails').html(costvalues);
 	}
 </script>
